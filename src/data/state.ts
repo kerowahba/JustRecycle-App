@@ -16,7 +16,6 @@ export const initialState: AppState = {
     menuEnabled: true
   },
   user: {
-    hasSeenTutorial: false,
     darkMode: false,
     isLoggedin: false,
     loading: false
