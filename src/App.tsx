@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Route } from 'react-router-dom';
-import { IonApp, IonRouterOutlet, IonSplitPane } from '@ionic/react';
+import { IonApp, IonHeader, IonRouterOutlet, IonSplitPane, IonText, IonTitle } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 
 import Menu from './components/Menu';
@@ -34,6 +34,7 @@ import Signup from './pages/Signup';
 import Support from './pages/Support';
 import { Schedule } from "./models/Schedule";
 import RedirectToLogin from './components/RedirectToLogin';
+import SchedulePage from './pages/SchedulePage';
 
 const App: React.FC = () => {
   return (
@@ -71,6 +72,19 @@ const IonicApp: React.FC<IonicAppProps> = ({ darkMode, schedule, setIsLoggedIn, 
     ) : (
         <IonApp className={`${darkMode ? 'dark-theme' : ''}`}>
           <IonReactRouter>
+            <IonText >
+            <h1  style={{ paddingLeft:'30%', paddingTop:'30%', position:'sticky'}}>
+              Welcome to <span style={{color:'green' }}>
+                <b><em>
+                   JustRecycle 
+                </em></b>
+              </span> App
+            </h1>
+            <br/>
+            <h2  style={{ paddingLeft:'30%', position:'sticky'}}>
+              Please choose from the side menu to start your Journey
+            </h2>
+            </IonText>
             <IonSplitPane contentId="main">
               <Menu />
               <IonRouterOutlet id="main">
