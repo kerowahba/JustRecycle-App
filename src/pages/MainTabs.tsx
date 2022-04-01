@@ -1,7 +1,7 @@
 import React  from 'react';
 import { IonTabs, IonRouterOutlet, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/react';
 import { Route, Redirect } from 'react-router';
-import { calendar, location, informationCircle, people, calendarOutline, cameraOutline } from 'ionicons/icons';
+import { calendar, location, informationCircle, people, calendarOutline, cameraOutline, scanCircle } from 'ionicons/icons';
 import SchedulePage from './SchedulePage';
 import SpeakerList from './SpeakerList';
 import SpeakerDetail from './SpeakerDetail';
@@ -23,10 +23,10 @@ const MainTabs: React.FC<MainTabsProps> = () => {
           Using the render method prop cuts down the number of renders your components will have due to route changes.
           Use the component prop when your component depends on the RouterComponentProps passed in automatically.
         */}
-        <Route path="/tabs/speakers" render={() => <SpeakerList />} exact={true} />
-        <Route path="/tabs/speakers/:id" component={SpeakerDetail} exact={true} />
+        <Route path="/tabs/history" render={() => <SpeakerList />} exact={true} />
+        <Route path="/tabs/history/:id" component={SpeakerDetail} exact={true} />
         <Route path="/tabs/schedule/:id" component={SessionDetail} />
-        <Route path="/tabs/speakers/sessions/:id" component={SessionDetail} />
+        <Route path="/tabs/history/sessions/:id" component={SessionDetail} />
         <Route path="/tabs/map" render={() => <MapView />} exact={true} />
         <Route path="/tabs/about" render={() => <About />} exact={true} />
         <Route path="/tabs/scan" render={() => <Scan/>} exact={true} />
@@ -38,9 +38,9 @@ const MainTabs: React.FC<MainTabsProps> = () => {
           <IonIcon icon={cameraOutline} />
           <IonLabel>Scan New Object</IonLabel>
         </IonTabButton>
-        <IonTabButton tab="speakers" href="/tabs/speakers">
-          <IonIcon icon={people} />
-          <IonLabel>Speakers</IonLabel>
+        <IonTabButton tab="speakers" href="/tabs/history">
+          <IonIcon icon={scanCircle} />
+          <IonLabel>Scan History</IonLabel>
         </IonTabButton>
         <IonTabButton tab="collection" href="/tabs/collection">
           <IonIcon icon={calendarOutline} />
