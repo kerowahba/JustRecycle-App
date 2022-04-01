@@ -2,7 +2,7 @@ import React from 'react';
 import { RouteComponentProps, withRouter, useLocation } from 'react-router';
 
 import { IonContent, IonIcon, IonItem, IonLabel, IonList, IonListHeader, IonMenu, IonMenuToggle, IonToggle } from '@ionic/react';
-import { calendarOutline, hammer, moonOutline, help, informationCircleOutline, logIn, logOut, mapOutline, peopleOutline, person, personAdd } from 'ionicons/icons';
+import { calendarOutline, hammer, moonOutline, help, informationCircleOutline, logIn, logOut, mapOutline, peopleOutline, person, personAdd, cameraOutline } from 'ionicons/icons';
 
 import { connect } from '../data/connect';
 import { setDarkMode } from '../data/user/user.actions';
@@ -11,8 +11,10 @@ import './Menu.css'
 
 const routes = {
   appPages: [
-    { title: 'Schedule', path: '/tabs/schedule', icon: calendarOutline },
+    { title: 'Scan New Object', path: '/tabs/scan', icon: cameraOutline },
     { title: 'Speakers', path: '/tabs/speakers', icon: peopleOutline },
+    { title: 'Collection Schedule', path: '/tabs/collection', icon: calendarOutline },
+
     { title: 'Map', path: '/tabs/map', icon: mapOutline },
     { title: 'About', path: '/tabs/about', icon: informationCircleOutline }
   ],
