@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 
-import { IonToolbar, IonContent, IonPage, IonButtons, IonTitle, IonMenuButton, IonSegment, IonSegmentButton, IonButton, IonIcon, IonSearchbar, IonRefresher, IonRefresherContent, IonToast, IonModal, IonHeader, getConfig } from '@ionic/react';
-import { options, search } from 'ionicons/icons';
+import { IonToolbar, IonContent, IonPage, IonButtons, IonTitle, IonMenuButton, IonSegment, IonSegmentButton, IonButton, IonIcon, IonSearchbar, IonRefresher, IonRefresherContent, IonToast, IonModal, IonHeader, getConfig, IonImg, IonFab, IonFabButton } from '@ionic/react';
+import { camera, options, search } from 'ionicons/icons';
 
 import SessionList from '../components/SessionList';
 import SessionListFilter from '../components/SessionListFilter';
@@ -13,6 +13,7 @@ import * as selectors from '../data/selectors';
 import { connect } from '../data/connect';
 import { setSearchText } from '../data/sessions/sessions.actions';
 import { Schedule } from '../models/Schedule';
+import ScanInfo from './ScanInfo';
 
 interface OwnProps { }
 
@@ -33,21 +34,18 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ favoritesSchedule, schedule
   const [showSearchbar, setShowSearchbar] = useState<boolean>(false);
   const [showFilterModal, setShowFilterModal] = useState(false);
   const ionRefresherRef = useRef<HTMLIonRefresherElement>(null);
-  const [showCompleteToast, setShowCompleteToast] = useState(false);
+  const [showInfo, setShowInfo] = useState(false);
 
   const pageRef = useRef<HTMLElement>(null);
 
   const ios = mode === 'ios';
 
-  const doRefresh = () => {
-    setTimeout(() => {
-      ionRefresherRef.current!.complete();
-      setShowCompleteToast(true);
-    }, 2500)
+  const image = {
+    src: '/assets/img/garbage/images/empty_water_bottle.jpg',
   };
 
   return (
-    <IonPage ref={pageRef} id="schedule-page">
+    <IonPage ref={pageRef} id="scan-page">
       <IonHeader translucent={true}>
         <IonToolbar>
           {!showSearchbar &&
@@ -55,7 +53,7 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ favoritesSchedule, schedule
               <IonMenuButton />
             </IonButtons>
           }
-          {ios &&
+          {/* {ios &&
             <IonSegment value={segment} onIonChange={(e) => setSegment(e.detail.value as any)}>
               <IonSegmentButton value="all">
                 All
@@ -64,15 +62,15 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ favoritesSchedule, schedule
                 Favorites
               </IonSegmentButton>
             </IonSegment>
-          }
+          } */}
           {!ios && !showSearchbar &&
-            <IonTitle>Schedule</IonTitle>
+            <IonTitle>Scan New Object</IonTitle>
           }
-          {showSearchbar &&
+          {/* {showSearchbar &&
             <IonSearchbar showCancelButton="always" placeholder="Search" onIonChange={(e: CustomEvent) => setSearchText(e.detail.value)} onIonCancel={() => setShowSearchbar(false)}></IonSearchbar>
-          }
+          } */}
 
-          <IonButtons slot="end">
+          {/* <IonButtons slot="end">
             {!ios && !showSearchbar &&
               <IonButton onClick={() => setShowSearchbar(true)}>
                 <IonIcon slot="icon-only" icon={search}></IonIcon>
@@ -83,10 +81,10 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ favoritesSchedule, schedule
                 {mode === 'ios' ? 'Filter' : <IonIcon icon={options} slot="icon-only" />}
               </IonButton>
             }
-          </IonButtons>
+          </IonButtons> */}
         </IonToolbar>
 
-        {!ios &&
+        {/* {!ios &&
           <IonToolbar>
             <IonSegment value={segment} onIonChange={(e) => setSegment(e.detail.value as any)}>
               <IonSegmentButton value="all">
@@ -97,56 +95,27 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ favoritesSchedule, schedule
               </IonSegmentButton>
             </IonSegment>
           </IonToolbar>
-        }
+        } */}
       </IonHeader>
 
-      <IonContent fullscreen={true}>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Schedule</IonTitle>
-          </IonToolbar>
-          <IonToolbar>
-            <IonSearchbar placeholder="Search" onIonChange={(e: CustomEvent) => setSearchText(e.detail.value)}></IonSearchbar>
-          </IonToolbar>
-        </IonHeader>
+      { !showInfo && (
+        <>
+          <IonContent fullscreen={true}>
+            <div style={{ maxHeight: '80vh', overflow: 'hidden' }}>
+              <img src={image.src} alt='' style={{ height: "clac(100vh - 113px)" }} />
 
-        <IonRefresher slot="fixed" ref={ionRefresherRef} onIonRefresh={doRefresh}>
-          <IonRefresherContent />
-        </IonRefresher>
+            </div>
+            {/* <IonImg src={image.src} /> */}
+          </IonContent>
 
-        <IonToast
-          isOpen={showCompleteToast}
-          message="Refresh complete"
-          duration={2000}
-          onDidDismiss={() => setShowCompleteToast(false)}
-        />
-
-        <SessionList
-          schedule={schedule}
-          listType={segment}
-          hide={segment === 'favorites'}
-        />
-        <SessionList
-          // schedule={schedule}
-          schedule={favoritesSchedule}
-          listType={segment}
-          hide={segment === 'all'}
-        />
-      </IonContent>
-
-      <IonModal
-        isOpen={showFilterModal}
-        onDidDismiss={() => setShowFilterModal(false)}
-        swipeToClose={true}
-        presentingElement={pageRef.current!}
-      >
-        <SessionListFilter
-          onDismissModal={() => setShowFilterModal(false)}
-        />
-      </IonModal>
-
-      <ShareSocialFab />
-
+          <IonFab slot="fixed" vertical="bottom" horizontal="center">
+            <IonFabButton onClick={() => setShowInfo(true)}>
+              <IonIcon icon={camera} />
+            </IonFabButton>
+          </IonFab>
+        </>
+      )}
+      { showInfo && <ScanInfo itemId={0} setShowInfo={setShowInfo} />}
     </IonPage>
   );
 };

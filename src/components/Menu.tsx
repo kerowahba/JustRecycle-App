@@ -9,23 +9,50 @@ import { setDarkMode } from '../data/user/user.actions';
 
 import './Menu.css'
 
+// const routes = {
+//   appPages: [
+//     { title: 'Scan New Object', path: '/tabs/scan', icon: cameraOutline },
+//     { title: 'Scan History', path: '/tabs/history', icon: scanOutline },
+//     { title: 'Collection Schedule', path: '/tabs/collection', icon: calendarOutline },
+
+//     { title: 'Map', path: '/tabs/map', icon: mapOutline },
+//     { title: 'About', path: '/tabs/about', icon: informationCircleOutline }
+//   ],
+//   loggedInPages: [
+//     { title: 'Account', path: '/account', icon: person },
+//     // { title: 'Support', path: '/support', icon: help },
+//     { title: 'Logout', path: '/logout', icon: logOut },
+//     { title: 'Scan History', path: '/tabs/history', icon: scanOutline },
+//   ],
+//   loggedOutPages: [
+//     { title: 'Login', path: '/login', icon: logIn },
+//     // { title: 'Support', path: '/support', icon: help },
+//     { title: 'Signup', path: '/signup', icon: personAdd }
+//   ]
+// };
+
 const routes = {
-  appPages: [
+  appLoggedInPages: [
     { title: 'Scan New Object', path: '/tabs/scan', icon: cameraOutline },
     { title: 'Scan History', path: '/tabs/history', icon: scanOutline },
     { title: 'Collection Schedule', path: '/tabs/collection', icon: calendarOutline },
-
+    { title: 'Map', path: '/tabs/map', icon: mapOutline },
+    { title: 'About', path: '/tabs/about', icon: informationCircleOutline }
+  ],
+  appLoggedOutPages: [
+    { title: 'Scan New Object', path: '/tabs/scan', icon: cameraOutline },
+    { title: 'Collection Schedule', path: '/tabs/collection', icon: calendarOutline },
     { title: 'Map', path: '/tabs/map', icon: mapOutline },
     { title: 'About', path: '/tabs/about', icon: informationCircleOutline }
   ],
   loggedInPages: [
     { title: 'Account', path: '/account', icon: person },
-    { title: 'Support', path: '/support', icon: help },
-    { title: 'Logout', path: '/logout', icon: logOut }
+    // { title: 'Support', path: '/support', icon: help },
+    { title: 'Logout', path: '/logout', icon: logOut },
   ],
   loggedOutPages: [
     { title: 'Login', path: '/login', icon: logIn },
-    { title: 'Support', path: '/support', icon: help },
+    // { title: 'Support', path: '/support', icon: help },
     { title: 'Signup', path: '/signup', icon: personAdd }
   ]
 };
@@ -68,8 +95,8 @@ const Menu: React.FC<MenuProps> = ({ darkMode, history, isAuthenticated, setDark
     <IonMenu  type="overlay" disabled={!menuEnabled} contentId="main">
       <IonContent forceOverscroll={false}>
         <IonList lines="none">
-          <IonListHeader>JustRecycle Options</IonListHeader>
-          {renderlistItems(routes.appPages)}
+          {/* <IonListHeader>JustRecycle Options</IonListHeader> */}
+          {isAuthenticated ? renderlistItems(routes.appLoggedInPages) : renderlistItems(routes.appLoggedOutPages)}
         </IonList>
         <IonList lines="none">
           <IonListHeader>Account</IonListHeader>
