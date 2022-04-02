@@ -1,6 +1,6 @@
 import React  from 'react';
 import { IonTabs, IonRouterOutlet, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/react';
-import { Route, Redirect } from 'react-router';
+import { Route, Redirect, withRouter, RouteComponentProps } from 'react-router';
 import { calendar, location, informationCircle, people, calendarOutline, cameraOutline, scanCircle } from 'ionicons/icons';
 import SchedulePage from './SchedulePage';
 import SpeakerList from './SpeakerList';
@@ -10,15 +10,22 @@ import MapView from './MapView';
 import About from './About';
 import Collection from './Collection';
 import Scan from './Scan';
+import { connect } from '../data/connect';
 
-interface MainTabsProps { }
+interface StateProps {
+  darkMode: boolean;
+  isAuthenticated: boolean;
+  menuEnabled: boolean;
+}
 
-const MainTabs: React.FC<MainTabsProps> = () => {
+interface MainTabsProps extends RouteComponentProps, StateProps { }
+
+const MainTabs: React.FC<MainTabsProps> = ({ darkMode, isAuthenticated, menuEnabled }) => {
 
   return (
     <IonTabs>
       <IonRouterOutlet>
-        <Redirect exact path="/tabs" to="/tabs/schedule" />
+        <Redirect exact path="/tabs" to="/tabs/scan" />
         {/*
           Using the render method prop cuts down the number of renders your components will have due to route changes.
           Use the component prop when your component depends on the RouterComponentProps passed in automatically.
@@ -36,12 +43,12 @@ const MainTabs: React.FC<MainTabsProps> = () => {
       <IonTabBar slot="bottom">
       <IonTabButton tab="scan" href="/tabs/scan">
           <IonIcon icon={cameraOutline} />
-          <IonLabel>Scan New Object</IonLabel>
+          <IonLabel>Scan</IonLabel>
         </IonTabButton>
-        <IonTabButton tab="speakers" href="/tabs/history">
+        { isAuthenticated && (<IonTabButton tab="speakers" href="/tabs/history">
           <IonIcon icon={scanCircle} />
-          <IonLabel>Scan History</IonLabel>
-        </IonTabButton>
+          <IonLabel>History</IonLabel>
+        </IonTabButton>)}
         <IonTabButton tab="collection" href="/tabs/collection">
           <IonIcon icon={calendarOutline} />
           <IonLabel>Collection Schedule</IonLabel>
@@ -59,4 +66,13 @@ const MainTabs: React.FC<MainTabsProps> = () => {
   );
 };
 
-export default MainTabs;
+// export default MainTabs;
+
+export default connect<{}, StateProps, {}>({
+  mapStateToProps: (state) => ({
+    darkMode: state.user.darkMode,
+    isAuthenticated: state.user.isLoggedin,
+    menuEnabled: state.data.menuEnabled
+  }),
+  component: withRouter(MainTabs)
+})
