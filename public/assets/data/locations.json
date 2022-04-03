@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Map Center",
+    "lat": 45.49523744867997,
+    "lng": -73.57797832720864
+  }, {
+    "id": 2,
+    "name": "Monona Terrace Convention Center",
+    "lat": 45.49523744867997,
+    "lng": -73.57797832720864
+  }, {
+    "id": 3,
+    "name": "Ionic HQ",
+    "lat": 45.49523744867997,
+    "lng": -73.57797832720864
+  }, {
+    "id": 4,
+    "name": "Afterparty - Brocach Irish Pub",
+    "lat": 45.4952374486,
+    "lng": -73.57797832720864
+  }
+]
