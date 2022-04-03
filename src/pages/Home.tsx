@@ -40,11 +40,22 @@ const Home: React.FC<SupportProps> = () => {
       </IonHeader>
       <IonContent>
 
-        <div className="login-logo">
-          <img src="assets/img/appicon.svg" alt="Ionic logo" />
+        <div className="login-logo" style={{position:'relative'}}>
+          <img src="assets/img/home.webp" alt="Ionic logo" />
         </div>
-        <p>Hello, World!</p>
-
+        <IonText >
+              <h1  style={{ paddingLeft:'10%'}}>
+                Welcome to <span style={{color:'green' }}>
+                 <b><em>
+                     JustRecycle 
+                  </em></b>
+                </span> App
+              </h1>
+              <br/>
+              <h2  style={{ paddingLeft:'10%'}}>
+               Please choose from the side menu to start your Journey
+              </h2>
+              </IonText>
         {/* <form noValidate onSubmit={send}>
           <IonList>
             <IonItem>
