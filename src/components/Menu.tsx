@@ -41,6 +41,7 @@ const routes = {
   ],
   appLoggedOutPages: [
     { title: 'Scan New Object', path: '/tabs/scan', icon: cameraOutline },
+    { title: 'Scan History', path: '/tabs/history', icon: scanOutline },
     { title: 'Collection Schedule', path: '/tabs/collection', icon: calendarOutline },
     { title: 'Map', path: '/tabs/map', icon: mapOutline },
     { title: 'About', path: '/tabs/about', icon: informationCircleOutline }
