@@ -1,7 +1,10 @@
 {
   "projects": {
-    "default": "justrecycle-webapp",
-    "justrecycle-webapp": "justrecycle-webapp"
+    "default": "justrecycle-web",
+    "justrecycle-webapp": "justrecycle-webapp",
+    "justrecycle-app": "justrecycle-app",
+    "justrecycle-123456": "justrecycle-123456",
+    "justrecycle-web": "justrecycle-web"
   },
   "targets": {}
 }
