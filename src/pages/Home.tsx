@@ -39,7 +39,7 @@ const Home: React.FC<SupportProps> = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent>
-
+        <h1>Wala 2a Mina 2a mota5alaaaf</h1>
         <div className="login-logo" style={{position:'relative'}}>
           <img src="assets/img/home.webp" alt="Ionic logo" />
         </div>
