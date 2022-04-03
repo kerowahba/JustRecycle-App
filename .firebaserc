@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "justrecycle-app"
-  }
+    "default": "justrecycle-webapp",
+    "justrecycle-webapp": "justrecycle-webapp"
+  },
+  "targets": {}
 }
