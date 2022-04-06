@@ -55,14 +55,7 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ favoritesSchedule, schedule
               <IonMenuButton />
             </IonButtons>
           }
-          {ios &&
-            <IonSegment value={segment} onIonChange={(e) => setSegment(e.detail.value as any)}>
-              <IonSegmentButton value="all">
-                All
-              </IonSegmentButton>
-              
-            </IonSegment>
-          }
+          
           {!ios && !showSearchbar &&
             <IonTitle>Truck Schedule PickUps</IonTitle>
           }
@@ -84,15 +77,6 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ favoritesSchedule, schedule
           </IonButtons>
         </IonToolbar>
 
-        {!ios &&
-          <IonToolbar>
-            <IonSegment value={segment} onIonChange={(e) => setSegment(e.detail.value as any)}>
-              <IonSegmentButton value="all">
-                All
-              </IonSegmentButton>
-            </IonSegment>
-          </IonToolbar>
-        }
       </IonHeader>
 
       <IonContent fullscreen={true}>
