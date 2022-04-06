@@ -60,13 +60,11 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ favoritesSchedule, schedule
               <IonSegmentButton value="all">
                 All
               </IonSegmentButton>
-              <IonSegmentButton value="favorites">
-                Favorites
-              </IonSegmentButton>
+              
             </IonSegment>
           }
           {!ios && !showSearchbar &&
-            <IonTitle>Schedule</IonTitle>
+            <IonTitle>Truck Schedule PickUps</IonTitle>
           }
           {showSearchbar &&
             <IonSearchbar showCancelButton="always" placeholder="Search" onIonChange={(e: CustomEvent) => setSearchText(e.detail.value)} onIonCancel={() => setShowSearchbar(false)}></IonSearchbar>
@@ -92,9 +90,6 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ favoritesSchedule, schedule
               <IonSegmentButton value="all">
                 All
               </IonSegmentButton>
-              <IonSegmentButton value="favorites">
-                Favorites
-              </IonSegmentButton>
             </IonSegment>
           </IonToolbar>
         }
@@ -103,7 +98,7 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ favoritesSchedule, schedule
       <IonContent fullscreen={true}>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Schedule</IonTitle>
+            <IonTitle size="large">Truck Schedule PickUps</IonTitle>
           </IonToolbar>
           <IonToolbar>
             <IonSearchbar placeholder="Search" onIonChange={(e: CustomEvent) => setSearchText(e.detail.value)}></IonSearchbar>
@@ -120,17 +115,10 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ favoritesSchedule, schedule
           duration={2000}
           onDidDismiss={() => setShowCompleteToast(false)}
         />
-
         <SessionList
           schedule={schedule}
           listType={segment}
           hide={segment === 'favorites'}
-        />
-        <SessionList
-          // schedule={schedule}
-          schedule={favoritesSchedule}
-          listType={segment}
-          hide={segment === 'all'}
         />
       </IonContent>
 
