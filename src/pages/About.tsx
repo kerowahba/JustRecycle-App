@@ -35,79 +35,20 @@ const About: React.FC<AboutProps> = () => {
             <IonButtons slot="start">
               <IonMenuButton></IonMenuButton>
             </IonButtons>
-            <IonButtons slot="end">
-              <IonButton onClick={presentPopover}>
-                <IonIcon slot="icon-only" ios={ellipsisHorizontal} md={ellipsisVertical}></IonIcon>
-              </IonButton>
-            </IonButtons>
           </IonToolbar>
         </IonHeader>
 
         <div className="about-header">
-          {/* Instead of loading an image each time the select changes, use opacity to transition them */}
-          <div className="about-image madison" style={{'opacity': location === 'madison' ? '1' : undefined}}></div>
-          <div className="about-image austin" style={{'opacity': location === 'austin' ? '1' : undefined}}></div>
-          <div className="about-image chicago" style={{'opacity': location === 'chicago' ? '1' : undefined}}></div>
-          <div className="about-image seattle" style={{'opacity': location === 'seattle' ? '1' : undefined}}></div>
+          <div className="about-image about" style={{'opacity': '1' }}></div>
         </div>
         <div className="about-info">
           <h3 className="ion-padding-top ion-padding-start">About</h3>
 
           <p className="ion-padding-start ion-padding-end">
-            The Ionic Conference is a one-day conference on {displayDate(conferenceDate, 'MMM dd, yyyy') } featuring talks from the Ionic team. It is focused on Ionic applications being built with Ionic Framework. This includes migrating apps to the latest version of the framework, Angular concepts, Webpack, Sass, and many other technologies used in Ionic 2. Tickets are completely sold out, and we’re expecting more than 1000 developers – making this the largest Ionic conference ever!
+          JustRecycle App gives the user the proper knowledge to categorize different kinds of trash and shows them how to get rid of them while not contaminating the environment while demonstrating the garbage truck schedule based on the different cities in Quebec. As well as, it provides a map to show the users which city their street/neighbor belongs to and check the truck pickup schedule accordingly.  
+          <br/><br/> 
+          Since this App has been developed by a Concordia Student group, so the Map has been centered to show Concordia University, Montreal, Quebec.
           </p>
-
-          <h3 className="ion-padding-top ion-padding-start">Details</h3>
-
-          <IonList lines="none">
-            <IonItem>
-              <IonLabel>
-                Location
-              </IonLabel>
-              <IonSelect value={location} interfaceOptions={selectOptions} onIonChange={(e) => setLocation(e.detail.value as any)}>
-                <IonSelectOption value="madison">Madison, WI</IonSelectOption>
-                <IonSelectOption value="austin">Austin, TX</IonSelectOption>
-                <IonSelectOption value="chicago">Chicago, IL</IonSelectOption>
-                <IonSelectOption value="seattle">Seattle, WA</IonSelectOption>
-              </IonSelect>
-            </IonItem>
-            <IonItem button={true} id="open-date-input">
-              <IonLabel>
-                Date
-              </IonLabel>
-              <IonText slot="end">{displayDate(conferenceDate, 'MMM dd, yyyy')}</IonText>
-              <IonPopover id="date-input-popover" trigger="open-date-input" showBackdrop={false} side="top" alignment="end">
-                <IonDatetime
-                  max="2056"
-                  value={conferenceDate}
-                  onIonChange={(e) => setConferenceDate(e.detail.value!)}
-                  presentation="date">
-                </IonDatetime>
-              </IonPopover>
-            </IonItem>
-          </IonList>
-
-          <h3 className="ion-padding-top ion-padding-start">Internet</h3>
-
-          <IonList lines="none">
-            <IonItem>
-              <IonLabel>
-                Wifi network
-              </IonLabel>
-              <IonLabel className="ion-text-end">
-                ica{ displayDate(conferenceDate, 'y') }
-              </IonLabel>
-            </IonItem>
-            <IonItem>
-              <IonLabel>
-               Password
-              </IonLabel>
-              <IonLabel className="ion-text-end">
-                makegoodthings
-              </IonLabel>
-            </IonItem>
-          </IonList>
-
         </div>
       </IonContent>
 
