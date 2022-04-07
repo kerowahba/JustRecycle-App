@@ -21,40 +21,41 @@ interface SpeakerListProps extends OwnProps, StateProps, DispatchProps { };
 const SpeakerList: React.FC<SpeakerListProps> = ({ speakers, speakerSessions }) => {
 
   return (
-    <IonPage id="speaker-list">
-      <IonHeader translucent={true}>
-        <IonToolbar>
-          <IonButtons slot="start">
-            <IonMenuButton />
-          </IonButtons>
-          <IonTitle>Speakers</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-
-      <IonContent fullscreen={true}>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Speakers</IonTitle>
+      <IonPage id="speaker-list">
+        <IonHeader translucent={true}>
+          <IonToolbar className={"header"}>
+            <IonButtons slot="start">
+              <IonMenuButton />
+            </IonButtons>
+            <IonTitle className={"header_title"}>Scan History</IonTitle>
           </IonToolbar>
         </IonHeader>
+
+        <IonContent fullscreen={true}>
+          <IonHeader collapse="condense">
+            <IonToolbar className={"header"}>
+              <IonTitle size="large" className={"header_title"}>Scan History</IonTitle>
+            </IonToolbar>
+          </IonHeader>
 
           <IonGrid fixed>
             <IonRow>
               {speakers.map(speaker => (
-                <IonCol size="12" size-md="6" key={speaker.id}>
-                  <SpeakerItem
-                    key={speaker.id}
-                    speaker={speaker}
-                    sessions={speakerSessions[speaker.name]}
-                  />
-                </IonCol>
+                  <IonCol size="12" size-md="6" key={speaker.id}>
+                    <SpeakerItem
+                        key={speaker.id}
+                        speaker={speaker}
+                        sessions={speakerSessions[speaker.name]}
+                    />
+                  </IonCol>
               ))}
             </IonRow>
           </IonGrid>
-      </IonContent>
-    </IonPage>
+        </IonContent>
+      </IonPage>
   );
 };
+
 
 export default connect<OwnProps, StateProps, DispatchProps>({
   mapStateToProps: (state) => ({
