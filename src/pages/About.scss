@@ -96,8 +96,7 @@
 }
 
 #date-input-popover {
-  //--offset-y: -var(--ion-safe-area-bottom);
-
+  --offset-y: var(--ion-safe-area-bottom);
   --max-width: 90%;
   --width: 336px;
 }
