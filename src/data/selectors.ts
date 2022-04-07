@@ -135,8 +135,8 @@ export const mapCenter = (state: AppState) => {
     return {
       id: 1,
       name: 'Map Center',
-      lat: 45.49523744867997,
-      lng: -73.57797832720864
+      lat: 43.071584,
+      lng: -89.380120
     };
   }
   return item;

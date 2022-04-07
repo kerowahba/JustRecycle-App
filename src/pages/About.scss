@@ -20,7 +20,7 @@
     position: relative;
 
     width: 100%;
-    height: 70%;
+    height: 30%;
   }
 
   .about-header .about-image {
@@ -40,9 +40,21 @@
     transition: opacity 500ms ease-in-out;
   }
 
-  .about-header .about {
-    background-image: url("/assets/img/about.jpg");
-  }
+  //.about-header .madison {
+  //  background-image: url("/assets/img/about/madison.jpg");
+  //}
+  //
+  //.about-header .austin {
+  //  background-image: url("/assets/img/about/austin.jpg");
+  //}
+  //
+  //.about-header .chicago {
+  //  background-image: url("/assets/img/about/chicago.jpg");
+  //}
+  //
+  //.about-header .seattle {
+  //  background-image: url("/assets/img/about/seattle.jpg");
+  //}
 
   .about-info {
     position: absolute;
@@ -84,8 +96,7 @@
 }
 
 #date-input-popover {
-  --offset-y: -var(--ion-safe-area-bottom);
-
+  --offset-y: var(--ion-safe-area-bottom);
   --max-width: 90%;
   --width: 336px;
 }
