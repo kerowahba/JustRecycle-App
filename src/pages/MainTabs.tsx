@@ -45,10 +45,10 @@ const MainTabs: React.FC<MainTabsProps> = ({ darkMode, isAuthenticated, menuEnab
           <IonIcon icon={cameraOutline} />
           <IonLabel>Scan</IonLabel>
         </IonTabButton>
-        <IonTabButton tab="speakers" href="/tabs/history">
+        { isAuthenticated && (<IonTabButton tab="speakers" href="/tabs/history">
           <IonIcon icon={scanCircle} />
           <IonLabel>History</IonLabel>
-        </IonTabButton>)
+        </IonTabButton>)}
         <IonTabButton tab="collection" href="/tabs/collection">
           <IonIcon icon={calendarOutline} />
           <IonLabel>Collection Schedule</IonLabel>
