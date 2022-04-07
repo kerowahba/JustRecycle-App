@@ -23,18 +23,18 @@ const SpeakerList: React.FC<SpeakerListProps> = ({ speakers, speakerSessions }) 
   return (
     <IonPage id="speaker-list">
       <IonHeader translucent={true}>
-        <IonToolbar className={"header"}>
+        <IonToolbar>
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
-          <IonTitle className={"header_title"}>Scan History</IonTitle>
+          <IonTitle>Speakers</IonTitle>
         </IonToolbar>
       </IonHeader>
 
       <IonContent fullscreen={true}>
         <IonHeader collapse="condense">
-          <IonToolbar className={"header"}>
-            <IonTitle size="large" className={"header_title"}>Scan History</IonTitle>
+          <IonToolbar>
+            <IonTitle size="large">Speakers</IonTitle>
           </IonToolbar>
         </IonHeader>
 
@@ -55,7 +55,6 @@ const SpeakerList: React.FC<SpeakerListProps> = ({ speakers, speakerSessions }) 
     </IonPage>
   );
 };
-
 
 export default connect<OwnProps, StateProps, DispatchProps>({
   mapStateToProps: (state) => ({
