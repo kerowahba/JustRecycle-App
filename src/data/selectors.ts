@@ -29,7 +29,7 @@ export const getFilteredSchedule = createSelector(
       })
       if (sessions.length) {
         const groupToAdd: ScheduleGroup = {
-          time: group.time,
+          day: group.day,
           sessions
         }
         groups.push(groupToAdd);
@@ -55,7 +55,7 @@ export const getSearchedSchedule = createSelector(
       const sessions = group.sessions.filter(s => s.name.toLowerCase().indexOf(searchText.toLowerCase()) > -1)
       if (sessions.length) {
         const groupToAdd: ScheduleGroup = {
-          time: group.time,
+          day: group.day,
           sessions
         }
         groups.push(groupToAdd);
@@ -81,7 +81,7 @@ export const getGroupedFavorites = createSelector(
       const sessions = group.sessions.filter(s => favoriteIds.indexOf(s.id) > -1)
       if (sessions.length) {
         const groupToAdd: ScheduleGroup = {
-          time: group.time,
+          day: group.day,
           sessions
         }
         groups.push(groupToAdd);
