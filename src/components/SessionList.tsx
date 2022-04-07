@@ -51,7 +51,7 @@ const SessionList: React.FC<SessionListProps> = ({ addFavorite, removeFavorite, 
           <IonItemGroup key={`group-${index}`}>
             <IonItemDivider sticky>
               <IonLabel>
-                {group.time}
+                {group.day}
               </IonLabel>
             </IonItemDivider>
             {group.sessions.map((session: Session, sessionIndex: number) => (

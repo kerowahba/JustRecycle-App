@@ -4,7 +4,7 @@ export interface Schedule {
 }
 
 export interface ScheduleGroup {
-  time: string;
+  day: string;
   sessions: Session[];
 }
 

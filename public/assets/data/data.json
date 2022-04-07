@@ -4,7 +4,7 @@
       "date": "2047-05-17",
       "groups": [
         {
-          "time": "8:00 am",
+          "day": "Monday",
           "sessions": [
             {
               "name": "Trash Truck",
@@ -17,7 +17,7 @@
           ]
         },
         {
-          "time": "9:00 am",
+          "day": "Tuesday",
           "sessions": [
             {
               "name": "Trash Truck",
@@ -49,7 +49,7 @@
           ]
         },
         {
-          "time": "10:00 am",
+          "day": "Wednesday",
           "sessions": [
             {
               "name": "Trash Truck",
@@ -81,7 +81,7 @@
           ]
         },
         {
-          "time": "11:00 am",
+          "day": "Thursday",
           "sessions": [
             {
               "name": "Trash Truck",
@@ -113,7 +113,7 @@
           ]
         },
         {
-          "time": "12:00 pm",
+          "day": "Friday",
           "sessions": [
             {
               "name": "Trash Truck",
@@ -126,7 +126,7 @@
           ]
         },
         {
-          "time": "1:00 pm",
+          "day": "Saturday",
           "sessions": [
             {
               "name": "Trash Truck",
@@ -158,7 +158,7 @@
           ]
         },
         {
-          "time": "2:00 pm",
+          "day": "Sunday",
           "sessions": [
             {
               "name": "Landfill truck",
