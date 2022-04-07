@@ -55,21 +55,6 @@ const SpeakerDetail: React.FC<SpeakerDetailProps> = ({ speaker }) => {
   }
 
   function openContact(speaker: Speaker) {
-    setActionSheetButtons([
-      {
-        text: `Email ( ${speaker.email} )`,
-        handler: () => {
-          window.open('mailto:' + speaker.email);
-        }
-      },
-      {
-        text: `Call ( ${speaker.phone} )`,
-        handler: () => {
-          window.open('tel:' + speaker.phone);
-        }
-      }
-    ]);
-    setActionSheetHeader(`Share ${speaker.name}`);
     setShowActionSheet(true);
   }
 
@@ -82,57 +67,40 @@ const SpeakerDetail: React.FC<SpeakerDetailProps> = ({ speaker }) => {
   }
 
   return (
-    <IonPage id="speaker-detail">
-      <IonContent>
-        <IonHeader className="ion-no-border">
-          <IonToolbar>
-            <IonButtons slot="start">
-              <IonBackButton defaultHref="/tabs/history" />
-            </IonButtons>
-            <IonButtons slot="end">
-              <IonButton onClick={() => openContact(speaker)}>
-                <IonIcon slot="icon-only" ios={callOutline} md={callSharp}></IonIcon>
-              </IonButton>
-              <IonButton onClick={() => openSpeakerShare(speaker)}>
-                <IonIcon slot="icon-only" ios={shareOutline} md={shareSharp}></IonIcon>
-              </IonButton>
-            </IonButtons>
-          </IonToolbar>
-        </IonHeader>
+      <IonPage id="speaker-detail">
+        <IonContent>
+          <IonHeader className="ion-no-border">
+            <IonToolbar>
+              <IonButtons slot="start">
+                <IonBackButton defaultHref="/tabs/history" />
+              </IonButtons>
+              <IonButtons slot="end">
+                <IonButton onClick={() => openContact(speaker)}>
+                  <IonIcon slot="icon-only" ios={callOutline} md={callSharp}></IonIcon>
+                </IonButton>
+                <IonButton onClick={() => openSpeakerShare(speaker)}>
+                  <IonIcon slot="icon-only" ios={shareOutline} md={shareSharp}></IonIcon>
+                </IonButton>
+              </IonButtons>
+            </IonToolbar>
+          </IonHeader>
 
-        <div className="speaker-background">
-          <img src={speaker.profilePic} alt={speaker.name}/>
-          <h2>{speaker.name}</h2>
-        </div>
+          <div className="speaker-background">
+            <img src={speaker.profilePic} alt={speaker.name}/>
+            <h2>{speaker.name}</h2>
+          </div>
 
-        <div className="ion-padding speaker-detail">
-          <p>{speaker.about} Say hello on social media!</p>
-
-          <hr/>
-
-          <IonChip color="twitter" onClick={() => openExternalUrl(`https://twitter.com/${speaker.twitter}`)}>
-            <IonIcon icon={logoTwitter}></IonIcon>
-            <IonLabel>Twitter</IonLabel>
-          </IonChip>
-
-          <IonChip color="dark" onClick={() => openExternalUrl('https://github.com/ionic-team/ionic')}>
-            <IonIcon icon={logoGithub}></IonIcon>
-            <IonLabel>GitHub</IonLabel>
-          </IonChip>
-
-          <IonChip color="instagram" onClick={() => openExternalUrl('https://instagram.com/ionicframework')}>
-            <IonIcon icon={logoInstagram}></IonIcon>
-            <IonLabel>Instagram</IonLabel>
-          </IonChip>
-        </div>
-      </IonContent>
-      <IonActionSheet
-        isOpen={showActionSheet}
-        header={actionSheetHeader}
-        onDidDismiss={() => setShowActionSheet(false)}
-        buttons={actionSheetButtons}
-      />
-    </IonPage>
+          <div className="ion-padding speaker-detail">
+            <hr/>
+          </div>
+        </IonContent>
+        <IonActionSheet
+            isOpen={showActionSheet}
+            header={actionSheetHeader}
+            onDidDismiss={() => setShowActionSheet(false)}
+            buttons={actionSheetButtons}
+        />
+      </IonPage>
   );
 };
 

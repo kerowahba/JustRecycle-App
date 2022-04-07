@@ -1,0 +1,18 @@
+ion-col.item_type{
+    font-weight: bolder;
+    width: 20px;
+    color: #238974 ;
+}
+ion-col.item_detail{
+    text-align: left;
+
+}
+.image{
+    width: 50%;
+    margin-right: 20px ;
+}
+
+/*ion-card.speaker-card{*/
+/*   width: 40%;*/
+/*   float: left;*/
+/*}*/
