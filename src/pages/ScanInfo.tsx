@@ -82,6 +82,9 @@ const ScanInfo: React.FC<SchedulePageProps> = ({itemId, mode, setShowInfo, speak
                             <IonRow>
                                 <IonCol className={'object_type'} size='3'>Type</IonCol>
                                 <IonCol className={'object_detail'}>{speakers[itemId].garbageType}</IonCol>
+
+
+
                             </IonRow>
                             <IonRow>
                                 <IonCol className={'object_type'} size='3'>Material</IonCol>
