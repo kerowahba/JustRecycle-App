@@ -166,7 +166,7 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ favoritesSchedule, schedule
           </IonFab>
         </>
       }
-      {showInfo && <ScanInfo itemId={imgIdx} setShowInfo={setShowInfo} />}
+      {showInfo && <ScanInfo itemId={imgIdx} setShowInfo={setShowInfo}/>}
     </IonPage>
   );
 };

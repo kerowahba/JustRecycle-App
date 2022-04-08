@@ -1,0 +1,28 @@
+.scanInfoHeader{
+  color:#37ac92;
+  font-size: large;
+  text-align: center;
+  font-weight: bold;
+}
+.scanInfoImage{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+ion-col.object_type{
+  font-weight: bolder;
+  width: 10px;
+  color:#FF4910;
+  font-size: 25px;
+}
+ion-col.object_detail{
+  text-align: left;
+  font-size: 25px;
+  color:#37ac92;
+}
+
+ion-card.object_card{
+  background-color: #dbf3e8;
+}
