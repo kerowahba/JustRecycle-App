@@ -73,7 +73,7 @@ const ScanInfo: React.FC<SchedulePageProps> = ({itemId, mode, setShowInfo, speak
                         <br/>
                         <h1 style={{
                             fontSize: '50px',
-                            color: '#2A365E',
+                            color: '#28ba62',
                             textAlign: 'center',
                             fontWeight: 'bold'
                         }}>{speakers[itemId].name}</h1>

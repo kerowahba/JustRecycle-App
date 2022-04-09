@@ -46,7 +46,7 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ favoritesSchedule, schedule
   return (
     <IonPage ref={pageRef} id="schedule-page">
       <IonHeader translucent={true}>
-        <IonToolbar className={"header_title"}>
+        <IonToolbar >
           {!showSearchbar &&
             <IonButtons slot="start">
               <IonMenuButton />
@@ -54,8 +54,8 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ favoritesSchedule, schedule
           }
           
           {!ios && !showSearchbar &&
-            <IonTitle style={{fontWeight:'bold', fontSize:'30px', backgroundColor:'#dedede',
-              color: '#654e29'}}>Truck Schedule PickUps</IonTitle>
+            <IonTitle style={{fontWeight:'bold', fontSize:'30px',
+              color: '#28ba62'}}>Truck Schedule PickUps</IonTitle>
           }
           {showSearchbar &&
             <IonSearchbar showCancelButton="always" placeholder="Search" onIonChange={(e: CustomEvent) => setSearchText(e.detail.value)} onIonCancel={() => setShowSearchbar(false)}></IonSearchbar>

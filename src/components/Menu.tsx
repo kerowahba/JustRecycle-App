@@ -1,7 +1,19 @@
 import React from 'react';
 import { RouteComponentProps, withRouter, useLocation } from 'react-router';
 
-import { IonContent, IonIcon, IonItem, IonLabel, IonList, IonListHeader, IonMenu, IonMenuToggle, IonToggle } from '@ionic/react';
+import {
+  IonCol,
+  IonContent,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonListHeader,
+  IonMenu,
+  IonMenuToggle, IonRow,
+  IonTitle,
+  IonToggle
+} from '@ionic/react';
 import { calendarOutline, hammer, moonOutline, help, informationCircleOutline, logIn, logOut, mapOutline, peopleOutline, person, personAdd, cameraOutline, magnetOutline, scanOutline, scanCircleSharp, scanCircle } from 'ionicons/icons';
 
 import { connect } from '../data/connect';
@@ -68,13 +80,25 @@ const Menu: React.FC<MenuProps> = ({ darkMode, history, isAuthenticated, setDark
   }
 
   return (
+
+
     <IonMenu  type="overlay" disabled={!menuEnabled} contentId="main">
       <IonContent forceOverscroll={false}>
+          <IonRow>
+          <IonCol size='3' style={{textAlign:'center'}}>
+          <img src="assets/img/appicon.png" alt="Ionic logo" style={{width:'60%'}} />
+          </IonCol>
+          <IonCol style={{textAlign: 'left',fontWeight:'bold', fontSize:'30px',
+            color: '#28ba62', paddingTop:'4%'}}>
+          JustRecycle
+          </IonCol>
+          </IonRow>
+
         <IonList lines="none">
           {isAuthenticated ? renderlistItems(routes.appLoggedInPages) : renderlistItems(routes.appLoggedOutPages)}
         </IonList>
         <IonList lines="none">
-          <IonListHeader>Account</IonListHeader>
+          <IonListHeader style={{color:'#28ba62'}}>Account</IonListHeader>
           {isAuthenticated ? renderlistItems(routes.loggedInPages) : renderlistItems(routes.loggedOutPages)}
           <IonItem>
             <IonIcon slot="start" icon={moonOutline}></IonIcon>
@@ -82,7 +106,7 @@ const Menu: React.FC<MenuProps> = ({ darkMode, history, isAuthenticated, setDark
             <IonToggle checked={darkMode} onClick={() => setDarkMode(!darkMode)} />
           </IonItem>
         </IonList>
-        
+
       </IonContent>
     </IonMenu>
   );

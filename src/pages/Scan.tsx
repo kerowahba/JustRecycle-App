@@ -69,15 +69,15 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ favoritesSchedule, schedule
   return (
     <IonPage ref={pageRef} id="scan-page">
       <IonHeader translucent={true}>
-        <IonToolbar className={"header_title"}>
+        <IonToolbar >
           {!showSearchbar &&
             <IonButtons slot="start">
               <IonMenuButton />
             </IonButtons>
           }
           {!ios && !showSearchbar &&
-            <IonTitle style={{fontWeight:'bold', fontSize:'30px', backgroundColor:'#dedede',
-              color: '#654e29'}} >Scan Object</IonTitle>
+            <IonTitle style={{fontWeight:'bold', fontSize:'30px',
+              color: '#28ba62'}} >Scan Object</IonTitle>
           }
         </IonToolbar>
       </IonHeader>

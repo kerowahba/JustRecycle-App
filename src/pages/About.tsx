@@ -41,7 +41,7 @@ const About: React.FC<AboutProps> = () => {
           <div className="about-image about" style={{'opacity': '1' }}></div>
         </div>
         <div className="about-info">
-          <h3 className="ion-padding-top ion-padding-start">About</h3>
+          <h3 className="ion-padding-top ion-padding-start" style={{color: '#28ba62'}}>About</h3>
 
           <p className="ion-padding-start ion-padding-end">
           JustRecycle App gives the user the proper knowledge to categorize different kinds of trash and shows them how to get rid of them while not contaminating the environment while demonstrating the garbage truck schedule based on the different cities in Quebec. As well as, it provides a map to show the users which city their street/neighbor belongs to and check the truck pickup schedule accordingly.  
