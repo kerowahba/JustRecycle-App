@@ -48,11 +48,14 @@
 }
 
 ion-toolbar.header{
-  --background: #73B8D9;
-  color: #FE8F4D;
+  --background: #dedede;
+  color: #654e29;
 
 }
+
 ion-title.header_title{
-  font-weight: bolder;
-  font-size: 32px;
+  --background: #dedede;
+  color: #654e29;
+  font-weight: lighter;
+  font-size: 20px;
 }

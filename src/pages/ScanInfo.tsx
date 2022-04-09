@@ -47,15 +47,15 @@ const ScanInfo: React.FC<SchedulePageProps> = ({itemId, mode, setShowInfo, speak
 
     return (
         <IonPage ref={pageRef} id="scan-info-page">
-            <IonHeader translucent={true}>
-                <IonToolbar>
+            <IonHeader style={{backgroundColor: '#2A365E'}} translucent={true}>
+                <IonToolbar className={"header_title"} >
                     {!showSearchbar &&
                     <IonButtons slot="start">
                         <IonMenuButton/>
                     </IonButtons>
                     }
                     {!ios && !showSearchbar &&
-                    <IonTitle>Scanned Object's Info</IonTitle>
+                    <IonTitle style={{fontWeight:'bold', fontSize:'30px'}}>Scanned Object's Info</IonTitle>
                     }
                 </IonToolbar>
             </IonHeader>
@@ -72,7 +72,7 @@ const ScanInfo: React.FC<SchedulePageProps> = ({itemId, mode, setShowInfo, speak
                         <br/>
                         <br/>
                         <h1 style={{
-                            fontSize: '72px',
+                            fontSize: '50px',
                             color: '#2A365E',
                             textAlign: 'center',
                             fontWeight: 'bold'
@@ -80,19 +80,20 @@ const ScanInfo: React.FC<SchedulePageProps> = ({itemId, mode, setShowInfo, speak
                         <br/>
                         <IonGrid>
                             <IonRow>
-                                <IonCol className={'object_type'} size='3'>Type</IonCol>
+                                <IonCol className={'object_type'} size='6'>Type</IonCol>
                                 <IonCol className={'object_detail'}>{speakers[itemId].garbageType}</IonCol>
                             </IonRow>
                             <IonRow>
-                                <IonCol className={'object_type'} size='3'>Material</IonCol>
+                                <IonCol className={'object_type'} size='6'>Material</IonCol>
                                 <IonCol className={'object_detail'}>{speakers[itemId].material}</IonCol>
+
                             </IonRow>
                             <IonRow>
-                                <IonCol className={'object_type'} size='3'>Instructions</IonCol>
+                                <IonCol className={'object_type'} size='6'>Instructions</IonCol>
                                 <IonCol className={'object_detail'}>{speakers[itemId].instruction}</IonCol>
                             </IonRow>
                             <IonRow>
-                                <IonCol className={'object_type'} size='3'>Reusing Ideas</IonCol>
+                                <IonCol className={'object_type'} size='6'>Reusing Ideas</IonCol>
                                 <IonCol className={'object_detail'}><a
                                     href={speakers[itemId].reuse}>{speakers[itemId].reuse}</a></IonCol>
                             </IonRow>

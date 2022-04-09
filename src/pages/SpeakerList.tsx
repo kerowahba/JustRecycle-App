@@ -27,7 +27,7 @@ const SpeakerList: React.FC<SpeakerListProps> = ({ speakers, speakerSessions }) 
             <IonButtons slot="start">
               <IonMenuButton />
             </IonButtons>
-            <IonTitle className={"header_title"}>Scan History</IonTitle>
+            <IonTitle className={"header_title"} style={{fontWeight:'bold', fontSize:'30px'}}>Scan History</IonTitle>
           </IonToolbar>
         </IonHeader>
 

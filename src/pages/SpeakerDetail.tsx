@@ -69,7 +69,7 @@ const SpeakerDetail: React.FC<SpeakerDetailProps> = ({ speaker }) => {
   return (
       <IonPage id="speaker-detail">
         <IonContent>
-          <IonHeader className="ion-no-border">
+          <IonHeader className="ion-no-border" >
             <IonToolbar>
               <IonButtons slot="start">
                 <IonBackButton defaultHref="/tabs/history" />

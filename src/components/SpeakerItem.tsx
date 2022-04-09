@@ -36,9 +36,9 @@ const SpeakerItem: React.FC<SpeakerItemProps> = ({ speaker, sessions }) => {
             </IonItem>
           </IonCardHeader>
 
-          <IonCardContent>
+          <IonCardContent style={{backgroundColor:'#EEEEEE'}}>
             <IonList lines="none">
-              <IonGrid>
+              <IonGrid style={{backgroundColor:'#EEEEEE'}}>
                 <IonRow>
                   <IonCol className={'item_type'} size ='3'>Type</IonCol>
                   <IonCol className={'item_detail'}>{speaker.garbageType}</IonCol>
