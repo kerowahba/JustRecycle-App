@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { IonHeader, IonToolbar, IonContent, IonPage, IonButtons, IonMenuButton, IonButton, IonIcon, IonDatetime, IonSelectOption, IonList, IonItem, IonLabel, IonSelect, IonPopover, IonText } from '@ionic/react';
 import './About.scss';
-import { ellipsisHorizontal, ellipsisVertical } from 'ionicons/icons';
-import AboutPopover from '../components/AboutPopover';
+
 import { format, parseISO } from 'date-fns';
 
 interface AboutProps { }
@@ -47,18 +46,10 @@ const About: React.FC<AboutProps> = () => {
           <p className="ion-padding-start ion-padding-end">
           JustRecycle App gives the user the proper knowledge to categorize different kinds of trash and shows them how to get rid of them while not contaminating the environment while demonstrating the garbage truck schedule based on the different cities in Quebec. As well as, it provides a map to show the users which city their street/neighbor belongs to and check the truck pickup schedule accordingly.  
           <br/><br/> 
-          Since this App has been developed by a Concordia Student group, so the Map has been centered to show Concordia University, Montreal, Quebec.
+          Since this App has been developed by a Concordia Students group, so the Map has been centered to show Concordia University, Montreal, Quebec.
           </p>
         </div>
       </IonContent>
-
-      <IonPopover
-        isOpen={showPopover}
-        event={popoverEvent}
-        onDidDismiss={() => setShowPopover(false)}
-      >
-        <AboutPopover dismiss={() => setShowPopover(false)} />
-      </IonPopover>
     </IonPage>
   );
 };

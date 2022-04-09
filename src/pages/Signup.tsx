@@ -52,7 +52,7 @@ const Login: React.FC<LoginProps> = ({setIsLoggedIn, history, setUsername: setUs
       <IonContent>
 
         <div className="login-logo">
-          <img src="assets/img/appicon.svg" alt="Ionic logo" />
+          <img src="assets/img/home.webp" alt="Ionic logo" />
         </div>
 
         <form noValidate onSubmit={login}>

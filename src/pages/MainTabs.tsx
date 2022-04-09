@@ -1,10 +1,8 @@
 import React  from 'react';
 import { IonTabs, IonRouterOutlet, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/react';
 import { Route, Redirect, withRouter, RouteComponentProps } from 'react-router';
-import { calendar, location, informationCircle, people, calendarOutline, cameraOutline, scanCircle } from 'ionicons/icons';
-import SchedulePage from './SchedulePage';
+import { location, informationCircle, people, calendarOutline, cameraOutline, scanCircle } from 'ionicons/icons';
 import SpeakerList from './SpeakerList';
-import SpeakerDetail from './SpeakerDetail';
 import SessionDetail from './SessionDetail';
 import MapView from './MapView';
 import About from './About';
@@ -31,9 +29,7 @@ const MainTabs: React.FC<MainTabsProps> = ({ darkMode, isAuthenticated, menuEnab
           Use the component prop when your component depends on the RouterComponentProps passed in automatically.
         */}
         <Route path="/tabs/history" render={() => <SpeakerList />} exact={true} />
-        <Route path="/tabs/history/:id" component={SpeakerDetail} exact={true} />
         <Route path="/tabs/schedule/:id" component={SessionDetail} />
-        <Route path="/tabs/history/sessions/:id" component={SessionDetail} />
         <Route path="/tabs/map" render={() => <MapView />} exact={true} />
         <Route path="/tabs/about" render={() => <About />} exact={true} />
         <Route path="/tabs/scan" render={() => <Scan/>} exact={true} />

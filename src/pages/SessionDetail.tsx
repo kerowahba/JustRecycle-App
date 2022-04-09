@@ -3,7 +3,7 @@ import { IonHeader, IonToolbar, IonContent, IonPage, IonButtons, IonBackButton, 
 import { connect } from '../data/connect';
 import { withRouter, RouteComponentProps } from 'react-router';
 import * as selectors from '../data/selectors';
-import { starOutline, star, share, cloudDownload } from 'ionicons/icons';
+import { share } from 'ionicons/icons';
 import './SessionDetail.scss';
 import { addFavorite, removeFavorite } from '../data/sessions/sessions.actions';
 import { Session } from '../models/Schedule';
@@ -30,9 +30,6 @@ const SessionDetail: React.FC<SessionDetailProps> = ({ session, addFavorite, rem
 
   const isFavorite = favoriteSessions.indexOf(session.id) > -1;
   
-  const toggleFavorite = () => { 
-    isFavorite ? removeFavorite(session.id) : addFavorite(session.id);
-  };
   const shareSession = () => { };
   const sessionClick = (text: string) => { 
     console.log(`Clicked ${text}`);

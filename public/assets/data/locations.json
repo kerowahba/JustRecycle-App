@@ -1,17 +1,17 @@
 [
   {
     "id": 1,
-    "name": "Map Center",
-    "lat": 45.49523744867997,
-    "lng": -73.57797832720864
+    "name": "Montreal Waste Center Facility",
+    "lat": 45.5123744867997,
+    "lng": -73.65197832720864
   }, {
     "id": 2,
-    "name": "Laval",
+    "name": "Laval Waste Center Facility",
     "lat": 45.61523744867997,
-    "lng": -73.72797832720864
+    "lng": -73.75897832720864
   }, {
     "id": 3,
-    "name": "Brossard",
+    "name": "Brossard Waste Center Facility",
     "lat": 45.45523744867997,
     "lng": -73.47797832720864
   }

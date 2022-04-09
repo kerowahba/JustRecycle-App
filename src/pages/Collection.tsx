@@ -6,9 +6,6 @@ import { options, search } from 'ionicons/icons';
 import SessionList from '../components/SessionList';
 import SessionListFilter from '../components/SessionListFilter';
 import './CollectionPage.scss'
-
-import ShareSocialFab from '../components/ShareSocialFab';
-
 import * as selectors from '../data/selectors';
 import { connect } from '../data/connect';
 import { setSearchText } from '../data/sessions/sessions.actions';
@@ -118,7 +115,6 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ favoritesSchedule, schedule
         />
       </IonModal>
 
-      <ShareSocialFab />
 
     </IonPage>
   );
