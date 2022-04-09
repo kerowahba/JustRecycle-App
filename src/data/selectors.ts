@@ -134,9 +134,9 @@ export const mapCenter = (state: AppState) => {
   if (item == null) {
     return {
       id: 1,
-      name: 'Map Center',
-      lat: 45.49523744867997,
-      lng: -73.57797832720864
+      name: 'Montreal Waste Center Facility',
+      lat: 45.5123744867997,
+      lng: -73.65197832720864
     };
   }
   return item;

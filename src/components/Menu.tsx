@@ -21,28 +21,6 @@ import { setDarkMode } from '../data/user/user.actions';
 
 import './Menu.css'
 
-// const routes = {
-//   appPages: [
-//     { title: 'Scan New Object', path: '/tabs/scan', icon: cameraOutline },
-//     { title: 'Scan History', path: '/tabs/history', icon: scanOutline },
-//     { title: 'Collection Schedule', path: '/tabs/collection', icon: calendarOutline },
-
-//     { title: 'Map', path: '/tabs/map', icon: mapOutline },
-//     { title: 'About', path: '/tabs/about', icon: informationCircleOutline }
-//   ],
-//   loggedInPages: [
-//     { title: 'Account', path: '/account', icon: person },
-//     // { title: 'Support', path: '/support', icon: help },
-//     { title: 'Logout', path: '/logout', icon: logOut },
-//     { title: 'Scan History', path: '/tabs/history', icon: scanOutline },
-//   ],
-//   loggedOutPages: [
-//     { title: 'Login', path: '/login', icon: logIn },
-//     // { title: 'Support', path: '/support', icon: help },
-//     { title: 'Signup', path: '/signup', icon: personAdd }
-//   ]
-// };
-
 const routes = {
   appLoggedInPages: [
     { title: 'Scan Object', path: '/tabs/scan', icon: cameraOutline },
@@ -59,12 +37,10 @@ const routes = {
   ],
   loggedInPages: [
     { title: 'Account', path: '/account', icon: person },
-    // { title: 'Support', path: '/support', icon: help },
     { title: 'Logout', path: '/logout', icon: logOut },
   ],
   loggedOutPages: [
     { title: 'Login', path: '/login', icon: logIn },
-    // { title: 'Support', path: '/support', icon: help },
     { title: 'Signup', path: '/signup', icon: personAdd }
   ]
 };
@@ -119,7 +95,6 @@ const Menu: React.FC<MenuProps> = ({ darkMode, history, isAuthenticated, setDark
           </IonRow>
 
         <IonList lines="none">
-          {/* <IonListHeader>JustRecycle Options</IonListHeader> */}
           {isAuthenticated ? renderlistItems(routes.appLoggedInPages) : renderlistItems(routes.appLoggedOutPages)}
         </IonList>
         <IonList lines="none">

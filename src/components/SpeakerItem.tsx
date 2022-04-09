@@ -25,7 +25,7 @@ const SpeakerItem: React.FC<SpeakerItemProps> = ({ speaker, sessions }) => {
       <>
         <IonCard className="speaker-card">
           <IonCardHeader>
-            <IonItem button detail={false} lines="none" className="speaker-item">
+            <IonItem detail={false} lines="none" className="speaker-item">
               {/*<IonAvatar slot="start">*/}
               <img src={process.env.PUBLIC_URL + speaker.profilePic} alt="Speaker profile pic" className={"image"}/>
               {/*</IonAvatar>*/}
