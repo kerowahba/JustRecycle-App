@@ -46,13 +46,14 @@ const Login: React.FC<LoginProps> = ({setIsLoggedIn, history, setUsername: setUs
           <IonButtons slot="start">
             <IonMenuButton></IonMenuButton>
           </IonButtons>
-          <IonTitle>Login</IonTitle>
+          <IonTitle style={{fontWeight:'bold', fontSize:'30px',
+            color: '#28ba62'}}>Login</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
 
         <div className="login-logo">
-          <img src="assets/img/appicon.svg" alt="Ionic logo" />
+          <img src="assets/img/appicon.png" alt="Ionic logo" />
         </div>
 
         <form noValidate onSubmit={login}>
