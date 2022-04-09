@@ -21,11 +21,12 @@ const MapView: React.FC<MapViewProps> = ({ locations, mapCenter }) => {
   return (
   <IonPage id="map-view">
     <IonHeader>
-      <IonToolbar>
+      <IonToolbar className={"header_title"}>
         <IonButtons slot="start">
           <IonMenuButton></IonMenuButton>
         </IonButtons>
-        <IonTitle>Map</IonTitle>
+        <IonTitle style={{fontWeight:'bold', fontSize:'30px', backgroundColor:'#dedede',
+          color: '#654e29'}}>Map</IonTitle>
       </IonToolbar>
     </IonHeader>
 

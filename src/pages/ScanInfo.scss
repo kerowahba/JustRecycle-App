@@ -4,6 +4,14 @@
   text-align: center;
   font-weight: bold;
 }
+
+ion-toolbar.header_title{
+  --background: #dedede;
+  color: #654e29;
+  font-weight: bold;
+  font-size: 30px;
+}
+
 .scanInfoImage{
   display: flex;
   margin-left: auto;
@@ -14,15 +22,15 @@
 ion-col.object_type{
   font-weight: bolder;
   width: 10px;
-  color:#FF4910;
+  color: #654e29;
   font-size: 25px;
 }
 ion-col.object_detail{
   text-align: left;
   font-size: 25px;
-  color:#37ac92;
+  color:#06113C;
 }
 
 ion-card.object_card{
-  background-color: #dbf3e8;
+  background-color: #EEEEEE;
 }

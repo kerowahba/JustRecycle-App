@@ -47,15 +47,15 @@ const ScanInfo: React.FC<SchedulePageProps> = ({itemId, mode, setShowInfo, speak
 
     return (
         <IonPage ref={pageRef} id="scan-info-page">
-            <IonHeader translucent={true}>
-                <IonToolbar>
+            <IonHeader style={{backgroundColor: '#2A365E'}} translucent={true}>
+                <IonToolbar className={"header_title"} >
                     {!showSearchbar &&
                     <IonButtons slot="start">
                         <IonMenuButton/>
                     </IonButtons>
                     }
                     {!ios && !showSearchbar &&
-                    <IonTitle>Scanned Object's Info</IonTitle>
+                    <IonTitle style={{fontWeight:'bold', fontSize:'30px'}}>Scanned Object's Info</IonTitle>
                     }
                 </IonToolbar>
             </IonHeader>
