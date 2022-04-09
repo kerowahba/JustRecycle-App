@@ -1,11 +1,11 @@
 ion-col.item_type{
     font-weight: bolder;
     width: 20px;
-    color: #06113C;
+    /*color:#06113C;*/
 }
 ion-col.item_detail{
     text-align: left;
-    color: #06113C
+    /*color: #06113C*/
 
 }
 .image{

@@ -6,8 +6,7 @@
 }
 
 ion-toolbar.header_title{
-  --background: #dedede;
-  color: #654e29;
+  color: #28ba62;
   font-weight: bold;
   font-size: 30px;
 }
@@ -22,15 +21,15 @@ ion-toolbar.header_title{
 ion-col.object_type{
   font-weight: bolder;
   width: 10px;
-  color: #654e29;
+  //color: #654e29;
   font-size: 19px;
 }
 ion-col.object_detail{
   text-align: left;
   font-size: 17px;
-  color:#06113C;
+  //color:#28ba62;
 }
 
 ion-card.object_card{
-  background-color: #EEEEEE;
+  //background-color: #EEEEEE;
 }

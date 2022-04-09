@@ -36,23 +36,23 @@ const SpeakerItem: React.FC<SpeakerItemProps> = ({ speaker, sessions }) => {
             </IonItem>
           </IonCardHeader>
 
-          <IonCardContent style={{backgroundColor:'#EEEEEE'}}>
+          <IonCardContent >
             <IonList lines="none">
-              <IonGrid style={{backgroundColor:'#EEEEEE'}}>
+              <IonGrid>
                 <IonRow>
-                  <IonCol className={'item_type'} size ='3'>Type</IonCol>
+                  <IonCol className={'item_type'} size ='4'>Type</IonCol>
                   <IonCol className={'item_detail'}>{speaker.garbageType}</IonCol>
                 </IonRow>
                 <IonRow>
-                  <IonCol className={'item_type'} size ='3'>Material</IonCol>
+                  <IonCol className={'item_type'} size ='4'>Material</IonCol>
                   <IonCol className={'item_detail'}>{speaker.material}</IonCol>
                 </IonRow>
                 <IonRow>
-                  <IonCol className={'item_type'} size ='3'>Instructions</IonCol>
+                  <IonCol className={'item_type'} size ='4'>Instructions</IonCol>
                   <IonCol className={'item_detail'}>{speaker.instruction}</IonCol>
                 </IonRow>
                 <IonRow>
-                  <IonCol className={'item_type'} size ='3'>Reusing Ideas</IonCol>
+                  <IonCol className={'item_type'} size ='4'>Reusing Ideas</IonCol>
                   <IonCol className={'item_detail'}><a href={speaker.reuse}>{speaker.reuse}</a></IonCol>
                 </IonRow>
               </IonGrid>
