@@ -11,6 +11,6 @@
 * Run `npm install` from the project root.
 * Run `ionic serve` in a terminal from the project root.
 
- OR ==> you can visit the Real deployment of the prototype on: https://justrecycle-web.web.app/Home
+ OR ==> you can visit the Real deployment of the prototype on: https://justrecycle-web.web.app/
 * Profit. :tada:
 
